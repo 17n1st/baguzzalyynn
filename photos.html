@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Photos Collage</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/lovewhiteicon.png" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <style>
+            /* Mengatur background */
+            body {
+                margin: 0;
+                padding: 0;
+                height: 100%;
+                font-family: 'Nunito', sans-serif;
+                color: white;
+                background-color: #080808; /* Latar belakang warna #080808 */
+            }
+
+
+             /* Mengatur background dengan overlay yang hanya berpengaruh pada background */
+            .background-container {
+                position: relative;
+                height: 100vh;
+                background-image: url('assets/img/091f4c85-725e-499c-99f5-0b78b462b802.JPG');
+                background-size: cover;
+                background-position: center;
+                background-attachment: fixed;
+            }
+
+            /* Overlay hanya untuk background */
+            .background-container::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.7); /* Efek gelap lebih kuat untuk monokrom */
+                z-index: 0;
+            }
+
+            /* Kolase Foto */
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(6, 1fr); /* 6 kolom */
+                gap: 15px;
+                padding: 20px;
+                z-index: 1; /* Menempatkan di atas background */
+                position: relative; /* Agar konten tetap berada di atas overlay */
+            }
+
+            .gallery figure {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                color: white; /* Warna teks untuk keterangan */
+                position: relative;
+                height: 200px; /* Menetapkan tinggi tetap untuk setiap gambar */
+                overflow: hidden; /* Menyembunyikan bagian gambar yang keluar batas */
+            }
+
+            .gallery img {
+                width: 100%;
+                height: 100%; /* Mengatur tinggi gambar menjadi 100% dari tinggi figure */
+                object-fit: cover; /* Memastikan gambar terpotong dengan proporsional */
+                border-radius: 10px;
+                box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+            }
+
+            .gallery img:hover {
+                transform: scale(1.05);
+                transition: transform 0.3s ease;
+            }
+
+            .gallery figcaption {
+                margin-top: 5px;
+                font-size: 0.9rem;
+                color: white;
+            }
+
+            /* Menjaga kolase responsif */
+            @media (max-width: 1024px) {
+                .gallery {
+                    grid-template-columns: repeat(5, 1fr); /* 5 kolom pada layar sedang */
+                }
+            }
+
+            @media (max-width: 768px) {
+                .gallery {
+                    grid-template-columns: repeat(3, 1fr); /* 3 kolom pada layar lebih kecil */
+                }
+            }
+
+            @media (max-width: 480px) {
+                .gallery {
+                    grid-template-columns: 1fr; /* 1 kolom pada layar sangat kecil */
+                }
+            }
+
+            /* Judul dan teks */
+            h2 {
+                color: white !important; /* Pastikan judul menjadi putih */
+                font-size: 2.5rem;
+                margin-bottom: 20px;
+                z-index: 1; /* Menempatkan judul di atas background */
+                position: relative;
+            }
+
+            /* Footer Style */
+            footer {
+                text-align: center;
+                padding: 10px 0;
+                color: white;
+                background: transparent;
+                position: relative;
+                bottom: 0;
+                width: 100%;
+                z-index: 1; /* Menempatkan footer di atas background */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Background dengan overlay hanya di background -->
+        <a class="btn btn-primary custom-btn" href="index.html"> <i class="fa-solid fa-arrow-left"></i> </a>
+        <div class="background-container">
+            <!-- Photo Collage Section-->
+            <section class="gallery-section text-center">
+                <div class="container px-4 px-lg-5">
+                    <h2 class="mb-4">Mini Album Collage Photos Moments</h2>
+                    <p class="note">yahh sedikit foto foto kita </p>                    
+                    <div class="gallery">
+                        <!-- Kolase Foto 1 hingga Foto 60 -->
+                        <figure>
+                            <img src="assets/img/firstdate.jpg" alt="Photo 1">
+                            <figcaption>firstdate banget wkwk</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/mirorselfieeskalator.jpg" alt="Photo 2">
+                            <figcaption>miror selfie ahaha</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/wkwk blm pacaran ke pante.jpg" alt="Photo 3">
+                            <figcaption>awal dari segalanya wkwk</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/first event wibu nemenin cosplay.jpg" alt="Photo 4">
+                            <figcaption>nemenin keqing(cosplay)</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/abiscosplay.jpg" alt="Photo 5">
+                            <figcaption>slesai cosplay</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/cis suka selfie aja.jpg" alt="Photo 6">
+                            <figcaption>ciss paling suka selfie aja ahaha</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/nol koma lima.jpg" alt="Photo 7">
+                            <figcaption>0,5 di cgv ky orang orang ahaha</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/cie cie abis berenang.jpg" alt="Photo 8">
+                            <figcaption>abis penilaian berenang main hahaha</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/gacoandate.jpg" alt="Photo 9">
+                            <figcaption>gacoannn</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/cisss di kelas lupa event apa pake batik.jpg" alt="Photo 10">
+                            <figcaption>cisss pake lgi pake batik</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/ciee dipeluk.jpg" alt="Photo 11">
+                            <figcaption>lagi kangen ceritanya</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/cis portof bjawa.jpg" alt="Photo 12">
+                            <figcaption>sebelum menjadi raden</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/anjay foto sm raden.jpg" alt="Photo 13">
+                            <figcaption>foto sama raden diningrat</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/liat ini slalu inget caption kmu foto with bapake wkwk.jpg" alt="Photo 14">
+                            <figcaption>raden diningrat</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/cissss again selfie.jpg" alt="Photo 15">
+                            <figcaption>after menjadi raden</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/SEBLAKK DATEE.jpg" alt="Photo 16">
+                            <figcaption>SEBLAKK</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/terminal bulu pitu menjelang maghrib kala itu.jpg" alt="Photo 17">
+                            <figcaption>terminal bulupitu kala itu menjelang maghrib</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/terminal bulu pitu kala itu menjalang maghrib part2.jpg" alt="Photo 18">
+                            <figcaption>ciss dlu sebelum balik ahaha</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/GOR PBG.jpg" alt="Photo 19">
+                            <figcaption>gor pbgg</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/jajan banyak kita.jpg" alt="Photo 20">
+                            <figcaption>jajan banyakk</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/ciss abis peniliain renang again.jpg" alt="Photo 21">
+                            <figcaption>abis penilaian renang again</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/baso aci rsm duduk di kampung dhahar behh.jpg" alt="Photo 22">
+                            <figcaption>pulang gasik baso aci duls</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/dimsumm alun alunn.jpg" alt="Photo 23">
+                            <figcaption>dimsum alun alunn</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/kumisku tebel bgt disini wkwk.jpg" alt="Photo 24">
+                            <figcaption>kumisku tebel bet tebel</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/cosplayy pertamakuu ciss miror.jpg" alt="Photo 25">
+                            <figcaption>pertamakali cosplay</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/pertamakaliakuikutcosplayjuga.jpg" alt="Photo 26">
+                            <figcaption>anya x damian ahahha</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/foto abis nonton kya orang orang ahaha.jpg" alt="Photo 27">
+                            <figcaption>foto abis nonton biar kaya orang orang ktnya ahaha</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/piss.jpg" alt="Photo 28">
+                            <figcaption>cisss</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/sushi ramen date.jpg" alt="Photo 29">
+                            <figcaption>sushi & ramenn</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/mbah kakunkk date.jpg" alt="Photo 30">
+                            <figcaption>mbah kakunkk</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/penari dan mas osis anjayy.jpg" alt="Photo 31">
+                            <figcaption>anjayy osis x penari</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/anjay foto sm osis.jpg" alt="Photo 32">
+                            <figcaption>kaku bgt klo ga selfie</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/selfie sama osis.jpg" alt="Photo 33">
+                            <figcaption>yeayy selfiee</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/gacoandate pulang sekolah.jpg" alt="Photo 34">
+                            <figcaption>gacoan pulang sekolah</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/abis beli seblak ahahah helm botak kata kmu.jpg" alt="Photo 35">
+                            <figcaption>helm botak katanya</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/ciss karaoke timezone.jpg" alt="Photo 36">
+                            <figcaption>karaoke di happytime</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/ciee hp baru ahaha.jpg" alt="Photo 37">
+                            <figcaption>ciee hape baru</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/ahaha naik bebek bebek an di btr.jpg" alt="Photo 38">
+                            <figcaption>naik bebek bebek an ahaha</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/otw purbayasa date mixue dlu.jpg" alt="Photo 39">
+                            <figcaption>mixue dlu</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/cisss purbayasa date.jpg" alt="Photo 40">
+                            <figcaption>purbayasaa date</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/ciss part 2.jpg" alt="Photo 41">
+                            <figcaption>part 2</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/sayang aku pgn bunga, okee.jpg" alt="Photo 42">
+                            <figcaption>bunga fyp tiktok</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/bandung turu.JPEG" alt="Photo 43">
+                            <figcaption>menuju bandung</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/bandung turu2.JPEG" alt="Photo 44">
+                            <figcaption>menuju bandung</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/bandung outingclass selfie.jpg" alt="Photo 45">
+                            <figcaption>bdg 1</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/bandung outingclass.jpg" alt="Photo 46">
+                            <figcaption>bdg 2</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/bandung outingclass2.jpg" alt="Photo 47">
+                            <figcaption>bdg 3</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/bandung nol koma lima.JPEG" alt="Photo 48">
+                            <figcaption>bdg 4, sempet berantem makanya fotonya dkit di bdg huhu wkwk</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/portof bjawa last smt.JPEG" alt="Photo 49">
+                            <figcaption>portof bjawa, sngt tidak sopan haha</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/pengin eskrim matcha.JPEG" alt="Photo 50">
+                            <figcaption>pengin eskrim matcha</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/foto studio.JPEG" alt="Photo 51">
+                            <figcaption>foto studio berdua</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/abis fotstud nemu hiddengem yang sangat enak ahaha.jpg" alt="Photo 52">
+                            <figcaption>abis fotstud kelas 11 huh mo kls 12</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/nemenin cosplay ke 3.jpg" alt="Photo 53">
+                            <figcaption>nemenin cosplay ke 3 yeayy</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/nemenin cosplay ke3 piss fotoin.jpg" alt="Photo 54">
+                            <figcaption>lucuu</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/nemeni cosplay ke3 selfie ciss lucunyaa.jpg" alt="Photo 55">
+                            <figcaption>bingung katanya jadi apa wkwk</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/bernadyaa.jpg" alt="Photo 56">
+                            <figcaption>nonton bernadyaa</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/bernadyaaa2.jpg" alt="Photo 57">
+                            <figcaption>bernadyadate</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/wlee.JPEG" alt="Photo 58">
+                            <figcaption>wlee</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/last photo.JPEG" alt="Photo 59">
+                            <figcaption>bonus1</figcaption>
+                        </figure>
+                        <figure>
+                            <img src="assets/img/random1.JPEG" alt="Photo 60">
+                            <figcaption>bonus2</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!-- JS Bootstrap-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
